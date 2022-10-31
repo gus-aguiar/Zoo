@@ -7,7 +7,6 @@ function isManager(id) {
 }
 
 function getRelatedEmployees(managerId) {
-  const gerenciadas = [];
   if (isManager(managerId) === false) {
     throw new Error('O id inserido não é de uma pessoa colaboradora gerente!');
   }
