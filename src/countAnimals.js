@@ -10,8 +10,7 @@ function countAnimals(animal) {
     });
     return objeto;
   }
-  const { specie } = animal;
-  species.find((element) => element.name === specie);
+  species.find((element) => element.name === animal.specie);
 }
 
 module.exports = countAnimals;
