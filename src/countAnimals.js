@@ -10,12 +10,20 @@ function countAnimals(animal) {
     });
     return objeto;
   }
-  species.find((element) => element.name === animal.specie);
+  const { specie } = animal;
+  // const { sex } = animal;
+  if (animal.sex === undefined) {
+    return species.find((element) => element.name === specie).residents.length;
+  }
+  if (animal.sex !== undefined) {
+    return species.find((element) => element.name === specie).residents
+      .filter((bixo) => bixo.sex === animal.sex).length;
+  }
 }
 
 module.exports = countAnimals;
 
-console.log(countAnimals({ specie: 'penguins' }));
+console.log(countAnimals({ specie: 'elephants', sex: 'male' }));
 
 // function countAnimals(animal) {
 //   const objeto = {};
