@@ -11,7 +11,6 @@ function countAnimals(animal) {
     return objeto;
   }
   const { specie } = animal;
-  // const { sex } = animal;
   if (animal.sex === undefined) {
     return species.find((element) => element.name === specie).residents.length;
   }
@@ -22,15 +21,3 @@ function countAnimals(animal) {
 }
 
 module.exports = countAnimals;
-
-console.log(countAnimals({ specie: 'elephants', sex: 'male' }));
-
-// function countAnimals(animal) {
-//   const objeto = {};
-//   if (animal === undefined) {
-//     for (const index in species) {
-//       objeto[species[index].name] = species[index].residents.length;
-//     }
-//     return objeto
-//   }
-// }
